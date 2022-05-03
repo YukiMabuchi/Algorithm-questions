@@ -1,4 +1,3 @@
-# https://evolany.larksuite.com/docs/docusHhTqzlqoBQTTTCxJW8UNac#
 from typing import List
 
 num_list = input('Please enter a list of numbers separated by space : ' ).split()
