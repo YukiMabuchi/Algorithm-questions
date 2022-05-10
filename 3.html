@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <haed>
+    <meta charset="UTF-8" />
+  </haed>
+  <script>
+    function downloadFile() {
+      //file size in MB as input
+      const input = document.getElementById("file_size");
+      const file_size = input.value;
+      const specified_size = file_size * 1024 * 1024;
+
+      const linkTagId = "getLocal";
+      const linkTag = document.getElementById(linkTagId);
+      const linkTagAttr = ["href", "download"];
+
+      const ab = new ArrayBuffer(specified_size);
+      const ia = new Uint16Array(ab).toString(16);
+      const blob = new Blob([ia], { type: "application/octet-stream" });
+
+      const objectURL = window.URL.createObjectURL(blob);
+
+      //generate a file
+      linkTag.setAttribute(linkTagAttr[0], objectURL);
+      linkTag.setAttribute(linkTagAttr[1], "testfile.txt");
+    }
+  </script>
+  <body>
+    <input type="text" id="file_size" />
+    <a id="getLocal" href="#" onClick="downloadFile()"
+      >Please specify the size of the file (MB) in the box and click here to
+      download</a
+    >
+  </body>
+</html>
