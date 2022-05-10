@@ -19,7 +19,7 @@
       const hex_a = new Uint16Array(ab).toString(16);
       const blob = new Blob([hex_a], { type: "application/octet-stream" });
 
-      const objectURL = window.URL.createObjectURL(blob);
+      const objectURL = URL.createObjectURL(blob);
 
       //download
       linkTag.setAttribute(linkTagAttr[0], objectURL);
