@@ -16,8 +16,8 @@
 
       //generate a file
       const ab = new ArrayBuffer(specified_size);
-      const ia = new Uint16Array(ab).toString(16);
-      const blob = new Blob([ia], { type: "application/octet-stream" });
+      const hex_a = new Uint16Array(ab).toString(16);
+      const blob = new Blob([hex_a], { type: "application/octet-stream" });
 
       const objectURL = window.URL.createObjectURL(blob);
 
